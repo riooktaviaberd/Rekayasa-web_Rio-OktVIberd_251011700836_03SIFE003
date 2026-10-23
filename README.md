@@ -1,58 +1,130 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Direktori Startup Lokal
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Website Direktori Startup Lokal merupakan proyek Ujian Tengah Semester (UTS) mata kuliah Rekayasa Web. Website ini dibuat untuk menampilkan informasi mengenai startup yang beroperasi di Indonesia, meliputi nama perusahaan, bidang industri, pendiri, logo, website resmi, dan deskripsi singkat.
 
-## About Laravel
+## Identitas Mahasiswa
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- **Nama:** Rio Oktaviaberd
+- **NIM:** 251011700836
+- **Kode Kelas:** 03SIFE003
+- **Mata Kuliah:** Rekayasa Web
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Teknologi yang Digunakan
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- **Laravel 13** — framework pengembangan aplikasi web.
+- **PHP 8.3** — bahasa pemrograman sisi server.
+- **MySQL** — sistem manajemen basis data.
+- **Bootstrap 5** — framework CSS untuk desain antarmuka.
+- **Blade** — template engine Laravel.
+- **Git dan GitHub** — pengelolaan versi dan penyimpanan kode sumber.
 
-## Learning Laravel
+## Fitur Website
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+- Halaman Beranda sebagai halaman utama website.
+- Halaman Daftar Startup yang menampilkan 10 data startup.
+- Halaman Detail Startup untuk melihat informasi setiap startup.
+- Informasi nama, industri, pendiri, logo, website resmi, dan deskripsi startup.
+- Navigasi antarhalaman.
+- Penyimpanan data menggunakan database dan pengisian data awal melalui Seeder.
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Daftar Startup
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
+Website ini menampilkan informasi dari 10 startup berikut:
 
-## Agentic Development
+1. Gojek
+2. Tokopedia
+3. Traveloka
+4. Bukalapak
+5. Blibli
+6. DANA
+7. Ruangguru
+8. Halodoc
+9. Xendit
+10. Bibit
 
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+## Persyaratan Sistem
 
-```bash
-composer require laravel/boost --dev
+- PHP 8.3 atau versi yang sesuai dengan kebutuhan Laravel.
+- Composer.
+- MySQL.
+- Node.js dan NPM untuk kebutuhan aset pengembangan jika diperlukan.
+- Laragon atau lingkungan server lokal sejenis.
 
-php artisan boost:install
-```
+## Cara Menjalankan Proyek
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+1. Clone repositori GitHub:
 
-## Contributing
+   ```bash
+   git clone <URL_REPOSITORI>
+   ```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+2. Masuk ke direktori proyek:
 
-## Code of Conduct
+   ```bash
+   cd UTS-251011700836
+   ```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+3. Instal dependensi PHP:
 
-## Security Vulnerabilities
+   ```bash
+   composer install
+   ```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+4. Salin konfigurasi lingkungan:
 
-## License
+   ```bash
+   copy .env.example .env
+   ```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+5. Buat application key:
+
+   ```bash
+   php artisan key:generate
+   ```
+
+6. Buat database MySQL dengan nama `db_uts_251011700836`, lalu sesuaikan konfigurasi database di file `.env`.
+
+7. Jalankan migration:
+
+   ```bash
+   php artisan migrate
+   ```
+
+8. Isi data awal startup:
+
+   ```bash
+   php artisan db:seed --class=StartupSeeder
+   ```
+
+9. Jalankan server lokal:
+
+   ```bash
+   php artisan serve
+   ```
+
+10. Buka alamat berikut di browser:
+
+    `http://127.0.0.1:8000`
+
+**Catatan:** Langkah instalasi di atas ditujukan untuk lingkungan baru. Jika database sudah berisi data, periksa terlebih dahulu sebelum menjalankan migration atau Seeder agar tidak menimbulkan duplikasi data.
+
+## Struktur Direktori Utama
+
+- `app/Models/Startup.php` — model data startup.
+- `app/Http/Controllers/StartupController.php` — pengelolaan tampilan data startup.
+- `database/migrations/` — struktur tabel database.
+- `database/seeders/StartupSeeder.php` — data awal startup.
+- `resources/views/home.blade.php` — halaman beranda.
+- `resources/views/startups/index.blade.php` — halaman daftar startup.
+- `resources/views/startups/show.blade.php` — halaman detail startup.
+- `resources/views/layouts/app.blade.php` — layout utama website.
+- `public/assets/images/` — gambar logo startup.
+- `public/Bootstrap/` — aset Bootstrap lokal.
+
+## Repositori GitHub
+
+[Direktori Startup Lokal — GitHub](https://github.com/riooktaviaberd/Rekayasa-web_Rio-OktVIberd_251011700836_03SIFE003)
+
+---
+
+Proyek ini dibuat untuk memenuhi tugas Ujian Tengah Semester mata kuliah Rekayasa Web.
